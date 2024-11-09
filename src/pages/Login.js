@@ -1,29 +1,53 @@
 // src/pages/Login.js
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 import './Login.css';
 
 function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Hardcoded credentials (for demonstration purposes)
+    const mockUsername = 'admin';
+    const mockPassword = 'password123';
+
+    if (username === mockUsername && password === mockPassword) {
+      alert('Login successful');
+      // You can redirect to a new page or show additional components
+    } else {
+      setError('Invalid username or password');
+    }
+  };
+
   return (
-    <motion.div
-      className="login-container"
-      initial={{ scale: 0.9, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <h1 className="login-title">Login</h1>
-      <form>
-        <div className="input-group">
-          <label>Email:</label>
-          <input type="email" name="email" required />
+    <div className="login-container">
+      <h2>Login</h2>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label>Username:</label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
         </div>
-        <div className="input-group">
+        <div>
           <label>Password:</label>
-          <input type="password" name="password" required />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </div>
-        <button className="login-button" type="submit">Login</button>
+        {error && <p className="error-message">{error}</p>}
+        <button type="submit" className="login-button">Login</button>
       </form>
-    </motion.div>
+    </div>
   );
 }
 

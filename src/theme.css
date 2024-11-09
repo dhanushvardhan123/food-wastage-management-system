@@ -1,16 +1,19 @@
 /* src/theme.css */
 :root {
-    --primary-color: #ff6b6b; /* Coral Red */
-    --secondary-color: #1dd1a1; /* Mint Green */
-    --background-color: #f7f7f7; /* Light Gray */
-    --text-color: #333; /* Dark Gray */
-    --accent-color: #54a0ff; /* Light Blue */
-  }
-  
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-    margin: 0;
-  }
-  
+  --primary-color: #ff6b6b;       /* Coral Red */
+  --secondary-color: #1dd1a1;     /* Mint Green */
+  --background-color: #f7f7f7;    /* Light Gray */
+  --text-color: #333;             /* Dark Gray */
+  --accent-color: #54a0ff;        /* Light Blue */
+  --button-hover-color: #f368e0;  /* Pink Accent */
+  --gradient-start: #feca57;      /* Warm Yellow */
+  --gradient-end: #48dbfb;        /* Bright Blue */
+}
+
+body {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
