@@ -1,0 +1,16 @@
+/* src/theme.css */
+:root {
+    --primary-color: #ff6b6b; /* Coral Red */
+    --secondary-color: #1dd1a1; /* Mint Green */
+    --background-color: #f7f7f7; /* Light Gray */
+    --text-color: #333; /* Dark Gray */
+    --accent-color: #54a0ff; /* Light Blue */
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
